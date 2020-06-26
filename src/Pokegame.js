@@ -6,8 +6,8 @@ const Pokegame = () => {
   const gameDeal = dealer();
   return (
     <>
-      <Pokedex pokemon={gameDeal.hand1} />
-      <Pokedex pokemon={gameDeal.hand2} />
+      <Pokedex pokemon={gameDeal.hand1} player='Player 1' />
+      <Pokedex pokemon={gameDeal.hand2} player='Player 2' />
     </>
   )
 }
