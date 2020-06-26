@@ -6,7 +6,6 @@ import './Pokedex.css';
 const Pokedex = () => {
   return (
     <div className="Pokedex">
-      <h2>Pokedex</h2>
       {pokemonData.map((p) => (
         <Pokecard
           id={p.id}
