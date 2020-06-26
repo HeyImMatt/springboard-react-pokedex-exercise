@@ -1,0 +1,9 @@
+.Pokedex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pokedex h2 {
+  color: gray;
+}

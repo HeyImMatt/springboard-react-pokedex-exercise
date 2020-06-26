@@ -1,0 +1,9 @@
+.Pokecard {
+  background-color: darkgray;
+  margin: 20px 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
