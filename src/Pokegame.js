@@ -4,10 +4,13 @@ import pokemonData from './pokemonData';
 
 const Pokegame = () => {
   const gameDeal = dealer();
+  const hand1Exp = totalExp(gameDeal.hand1)
+  const hand2Exp = totalExp(gameDeal.hand2)
+  
   return (
     <>
-      <Pokedex pokemon={gameDeal.hand1} player='Player 1' />
-      <Pokedex pokemon={gameDeal.hand2} player='Player 2' />
+      <Pokedex pokemon={gameDeal.hand1} player='Player 1' handExp={hand1Exp} isWinner={hand1Exp > hand2Exp ? true : false} />
+      <Pokedex pokemon={gameDeal.hand2} player='Player 2' handExp={hand2Exp} isWinner={hand2Exp > hand1Exp ? true : false} />
     </>
   )
 }
@@ -29,6 +32,12 @@ function dealer() {
     pokemonData.splice(idx, 1);
   }
   return {hand1, hand2}
+}
+
+function totalExp(hand) {
+  return hand.reduce((acc, p) => {
+    return acc + p.base_experience
+  }, 0)
 }
 
 export default Pokegame;

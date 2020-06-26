@@ -2,13 +2,10 @@ import React from 'react';
 import Pokecard from './Pokecard';
 import './Pokedex.css';
 
-const Pokedex = ({pokemon, player}) => {
-  const handExp = pokemon.reduce((acc, p) => {
-    return acc + p.base_experience
-  }, 0)
+const Pokedex = ({pokemon, player, handExp, isWinner}) => {
   return (
-    <div className="Pokedex">
-      <h4>{player} EXP Value: {handExp}</h4>
+    <div className={ isWinner ? "Pokedex winner" : "Pokedex" }>
+      <h4>{player} EXP Value: {handExp} <br></br> {isWinner ? 'This Hand Wins!' : ''}</h4>
       {pokemon.map((p) => (
         <Pokecard
           key={p.id}
